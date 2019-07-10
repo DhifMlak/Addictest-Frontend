@@ -18,6 +18,7 @@ export class UniversitiesComponent implements OnInit {
 
    ngOnInit() {
    this.colleges = this.appService.getAll();
+  //  console.log(this.colleges);
    this.filteredColleges = this.colleges;
 
   }
