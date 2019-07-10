@@ -1,0 +1,152 @@
+<main>
+    <div class="position-relative">
+<section class="section pb-0 section-components">
+      <!-- Background circles -->
+      <div class="shape shape-style-1 shape-primary">
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card shadow border-0">
+          <div class="card-body py-5">
+
+            <h6 class="text-primary text-uppercase">Filters</h6>
+            <mat-accordion>
+              <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Type of school
+                  </mat-panel-title>
+        
+                </mat-expansion-panel-header>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck1" (click)="addToFilter('Coed')" type="checkbox">
+                    <label class="custom-control-label" for="customCheck1">Public</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                      <input class="custom-control-input" id="customCheck2" (click)="addToFilter('Coed')" type="checkbox">
+                      <label class="custom-control-label" for="customCheck2">Private</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input class="custom-control-input" id="customCheck3" (click)="addToFilter('Coed')" type="checkbox">
+                        <label class="custom-control-label" for="customCheck3">2-year/community college</label>
+                      </div>
+                      <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="customCheck4" (click)="addToFilter('Coed')" type="checkbox">
+                          <label class="custom-control-label" for="customCheck4">4-year college or university</label>
+                        </div>
+              </mat-expansion-panel>
+              <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    School Size
+                  </mat-panel-title>
+              
+                </mat-expansion-panel-header>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck8" (click)="addToFilter('Coed')" type="checkbox">
+                    <label class="custom-control-label" for="customCheck8">Small < 2,000</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                      <input class="custom-control-input" id="customCheck9" (click)="addToFilter('Coed')" type="checkbox">
+                      <label class="custom-control-label" for="customCheck9">Medium < 2,000 - 15,000</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input class="custom-control-input" id="customCheck10" (click)="addToFilter('Coed')" type="checkbox">
+                        <label class="custom-control-label" for="customCheck10">Large > 15,000</label>
+                      </div>
+                     
+              </mat-expansion-panel>
+              <mat-expansion-panel >
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Single-sex or Coed
+                    </mat-panel-title>
+                
+                  </mat-expansion-panel-header>
+                  <div class="custom-control custom-checkbox mb-3">
+                      <input class="custom-control-input" id="customCheck5" (click)="addToFilter('Coed')" type="checkbox">
+                      <label class="custom-control-label" for="customCheck5">Coed</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input class="custom-control-input" id="customCheck6" (click)="addToFilter('Coed')" type="checkbox">
+                        <label class="custom-control-label" for="customCheck6">All Women</label>
+                      </div>
+                      <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="customCheck7" (click)="addToFilter('Coed')" type="checkbox">
+                          <label class="custom-control-label" for="customCheck7">All Men</label>
+                        </div>
+               
+                </mat-expansion-panel>
+                <mat-expansion-panel >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                       Majors
+                      </mat-panel-title>
+                     
+                    </mat-expansion-panel-header>
+                  </mat-expansion-panel>
+            </mat-accordion>
+
+            <a href="javascript:void(0)" class="btn btn-primary mt-4">Reset</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card card-lift--hover shadow border-0">
+              <div class="card-body py-5">
+                <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                  <i class="ni ni-check-bold"></i>
+                </div>
+                <h6 class="text-primary text-uppercase">Harvard University</h6>
+                <p class="description mt-3">Cambridge, MA</p>
+
+                <a href="javascript:void(0)" class="btn btn-primary mt-4">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-lift--hover shadow border-0">
+              <div class="card-body py-5">
+                <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+                  <i class="ni ni-istanbul"></i>
+                </div>
+                <h6 class="text-success text-uppercase">Yale University</h6>
+                <p class="description mt-3">Cambridge, MA</p>
+
+                <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-lift--hover shadow border-0">
+              <div class="card-body py-5">
+                <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                  <i class="ni ni-planet"></i>
+                </div>
+                <h6 class="text-warning text-uppercase">Stanford University </h6>
+                <p class="description mt-3">Cambridge, MA</p>
+
+                <a href="javascript:void(0)" class="btn btn-warning mt-4">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</main>

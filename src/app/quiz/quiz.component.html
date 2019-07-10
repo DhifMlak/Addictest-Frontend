@@ -1,0 +1,154 @@
+<main>
+  <div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg">
+      <div class="shape shape-style-1 shape-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <span class="h3">
+              Don't know where to start ? We can help you :)
+              <br>
+            </span>
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <mat-horizontal-stepper  labelPosition="bottom"  class="shadow" #stepper>
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>Kinds of Colleges</ng-template>
+                  <div class="alert alert-danger" role="alert">
+                    1) What type of school do you want to go to?
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck1" type="checkbox">
+                    <label class="custom-control-label" for="customCheck1">Public</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck2" type="checkbox">
+                    <label class="custom-control-label" for="customCheck2">Private</label>
+                  </div>
+                  <div class="alert alert-danger" role="alert">
+                    2) What kind of college are you interested in?
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck3" type="checkbox">
+                    <label class="custom-control-label" for="customCheck3">2-year/community college</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck4" type="checkbox">
+                    <label class="custom-control-label" for="customCheck4">4-year college or university</label>
+                  </div>
+                  <div class="float-right">
+                    <button  class="btn btn-secondary" matStepperPrevious>Back</button>
+                    <button  class="btn btn-primary"  matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>School Size</ng-template>
+                  <div class="alert alert-danger" role="alert">
+                    3) Does school size matter to you?
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck8" type="checkbox">
+                    <label class="custom-control-label" for="customCheck8">Small < 2,000</label> </div> <div
+                        class="custom-control custom-checkbox mb-3">
+                        <input class="custom-control-input" id="customCheck9" type="checkbox">
+                        <label class="custom-control-label" for="customCheck9">Medium < 2,000 - 15,000</label> </div>
+                            <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="customCheck10" type="checkbox">
+                            <label class="custom-control-label" for="customCheck10">Large > 15,000</label>
+                  </div>
+
+                  <div class="float-right">
+                    <button  class="btn btn-secondary" matStepperPrevious>Back</button>
+                    <button  class="btn btn-primary"  matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+
+
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>Single-sex or Coed</ng-template>
+                  <div class="alert alert-danger" role="alert">
+                    4) Most U.S. colleges are coed.
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck5" type="checkbox">
+                    <label class="custom-control-label" for="customCheck5">Coed</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck6" type="checkbox">
+                    <label class="custom-control-label" for="customCheck6">All Women</label>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck7" type="checkbox">
+                    <label class="custom-control-label" for="customCheck7">All Men</label>
+                  </div>
+                  <div class="float-right">
+                    <button  class="btn btn-secondary" matStepperPrevious>Back</button>
+                    <button  class="btn btn-primary"  matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+
+
+
+
+
+
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>Majors</ng-template>
+                  <div class="alert alert-danger" role="alert">
+                    5) Does school size matter to you?
+                  </div>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck8" type="checkbox">
+                    <label class="custom-control-label" for="customCheck8">Small < 2,000</label> </div> <div
+                        class="custom-control custom-checkbox mb-3">
+                        <input class="custom-control-input" id="customCheck9" type="checkbox">
+                        <label class="custom-control-label" for="customCheck9">Medium < 2,000 - 15,000</label> </div>
+                            <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="customCheck10" type="checkbox">
+                            <label class="custom-control-label" for="customCheck10">Large > 15,000</label>
+                  </div>
+
+                  <div class="float-right">
+                    <button  class="btn btn-secondary" matStepperPrevious>Back</button>
+                    <button  class="btn btn-primary"  matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+
+
+
+              <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                You are now done.
+                <div class="float-right">
+                  <button  class="btn btn-secondary" matStepperPrevious>Back</button>
+                  <button  class="btn btn-primary"  (click)="stepper.reset()">Reset</button>
+                </div>
+              </mat-step>
+            </mat-horizontal-stepper>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
