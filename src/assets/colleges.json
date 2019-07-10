@@ -1,15 +1,4 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-@Injectable({
-  providedIn: 'root'
-})
-export class AppService {
-  selected: any;
-
-  constructor(private httpClient: HttpClient) { }
- 
-   colleges = `[
+[
   {
     "name": "Harvard University",
     "national_rank": 1,
@@ -2451,13 +2440,3 @@ export class AppService {
     "very_selective": 0
   }
 ]
-`;
-  getAll(): any {
-    return JSON.parse(this.colleges);
-
-  }
-  getTop5() {
-    this.httpClient.get('http://82113ada-5b70-4092-a71f-b0405f451273.westus.azurecontainer.io/score');
-  }
-
-}

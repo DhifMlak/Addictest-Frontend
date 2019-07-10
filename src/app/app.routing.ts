@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'universities', component: UniversitiesComponent },
 
-  { path: 'user-profile', component: ProfileComponent },
+  { path: 'college', component: ProfileComponent },
   { path: 'register', component: SignupComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'login', component: LoginComponent },

@@ -25,8 +25,9 @@ export class FilterTestPipe implements PipeTransform {
 
     return value.filter(it => {
       let type;
+      console.log(it);
       if (searchJson.type.length !== 0) {
-        type = searchJson.type.includes(it.type.toString().toLowerCase());
+        type = searchJson.type.includes(it[searchJson.name.toString()].toString().toLowerCase());
       } else {
         type = true;
       }

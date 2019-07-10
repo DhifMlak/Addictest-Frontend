@@ -75,7 +75,7 @@
                 
                   </mat-expansion-panel-header>
                   <div class="custom-control custom-checkbox mb-3">
-                      <input class="custom-control-input" id="customCheck5" (click)="addToFilter('Coed')" type="checkbox">
+                      <input class="custom-control-input" id="customCheck5" (click)="addToFilter({name:'public',value:'0'})" type="checkbox">
                       <label class="custom-control-label" for="customCheck5">Coed</label>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
@@ -98,26 +98,27 @@
                   </mat-expansion-panel>
             </mat-accordion>
 
-            <a href="javascript:void(0)" class="btn btn-primary mt-4">Reset</a>
+            <a (click)="resetFilters()" class="btn btn-primary mt-4">Reset</a>
           </div>
         </div>
       </div>
       <div class="col-lg-9">
         <div class="row">
-          <div class="col-lg-4">
-            <div class="card card-lift--hover shadow border-0">
+          <div *ngFor="let college of colleges" class="col-lg-4">
+            <div  class="card card-lift--hover shadow border-0">
               <div class="card-body py-5">
-                <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                  <i class="ni ni-check-bold"></i>
+                <div class=" rounded-circle mb-4">
+                  <!-- <i class="ni ni-check-bold"></i> -->
+                  <img width="150" height="150" src="{{college.image}}">
                 </div>
-                <h6 class="text-primary text-uppercase">Harvard University</h6>
-                <p class="description mt-3">Cambridge, MA</p>
+                <h6 class="text-primary text-uppercase">{{college.name}}</h6>
+                <p class="description mt-3">{{college.Address}}</p>
 
-                <a href="javascript:void(0)" class="btn btn-primary mt-4">Learn more</a>
+                <a (click)="setSelected(college)" [routerLink]="['/college']" class="btn btn-primary mt-4">Learn more</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <div class="card card-lift--hover shadow border-0">
               <div class="card-body py-5">
                 <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
@@ -142,7 +143,7 @@
                 <a href="javascript:void(0)" class="btn btn-warning mt-4">Learn more</a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

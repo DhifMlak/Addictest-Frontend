@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterTestPipe } from '../pipes/filter-test.pipe';
 import { AppService } from '../app.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,24 +16,32 @@ export class UniversitiesComponent implements OnInit {
 
   constructor(private appService: AppService) { }
 
-  ngOnInit() {
-    this.appService.getAll().subscribe(data => {
-      this.colleges = data;
-      console.log(data);
-    });
+   ngOnInit() {
+   this.colleges = this.appService.getAll();
+   this.filteredColleges = this.colleges;
+
   }
 
   addToFilter(filterValue) {
-    let arrayCol: any[] = <Array<any>>this.searchJson['type'];
-    if (arrayCol.includes(filterValue.toLowerCase())) {
-      arrayCol = arrayCol.filter(elem => elem !== filterValue.toLowerCase());
-    } else {
-      arrayCol.push(filterValue.toLowerCase());
-    }
-    this.searchJson['type'] = arrayCol;
-    const p = new FilterTestPipe();
-    this.filteredColleges = p.transform(this.colleges, this.searchJson);
+   this.colleges = this.colleges.slice(0, 16);
+    // console.log(filterValue);
+    // let arrayCol: any[] = <Array<any>>this.searchJson['type'];
+    // if (arrayCol.includes(filterValue.name.toLowerCase())) {
+    //   arrayCol = arrayCol.filter(elem => elem[filterValue.name] !== filterValue.value.toLowerCase());
+    // } else {
+    //   arrayCol.push(filterValue);
+    // }
+    // this.colleges.slice(0, 4);
+    // this.searchJson['type'] = arrayCol;
+    // const p = new FilterTestPipe();
+    // this.filteredColleges = p.transform(this.colleges, this.searchJson);
   }
 
+  setSelected(college) {
+    this.appService.selected = college;
+  }
+  resetFilters() {
+    this.colleges = this.filteredColleges;
+  }
 
 }

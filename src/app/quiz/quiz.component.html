@@ -33,22 +33,22 @@
                     1) What type of school do you want to go to?
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input class="custom-control-input" id="customCheck1" type="checkbox">
+                    <input class="custom-control-input" id="customCheck1" (click)="addToFilter('public')" type="checkbox">
                     <label class="custom-control-label" for="customCheck1">Public</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input class="custom-control-input" id="customCheck2" type="checkbox">
+                    <input class="custom-control-input" id="customCheck2" (click)="addToFilter('private')" type="checkbox">
                     <label class="custom-control-label" for="customCheck2">Private</label>
                   </div>
                   <div class="alert alert-danger" role="alert">
                     2) What kind of college are you interested in?
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input class="custom-control-input" id="customCheck3" type="checkbox">
+                    <input class="custom-control-input" id="customCheck3" (click)="addToFilter('2')" type="checkbox">
                     <label class="custom-control-label" for="customCheck3">2-year/community college</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input class="custom-control-input" id="customCheck4" type="checkbox">
+                    <input class="custom-control-input" id="customCheck4" (click)="addToFilter('4')" type="checkbox">
                     <label class="custom-control-label" for="customCheck4">4-year college or university</label>
                   </div>
                   <div class="float-right">
@@ -64,7 +64,7 @@
                     3) Does school size matter to you?
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input class="custom-control-input" id="customCheck8" type="checkbox">
+                    <input class="custom-control-input" id="customCheck8" (click)="addToFilter('Coed')" type="checkbox">
                     <label class="custom-control-label" for="customCheck8">Small < 2,000</label> </div> <div
                         class="custom-control custom-checkbox mb-3">
                         <input class="custom-control-input" id="customCheck9" type="checkbox">
@@ -140,10 +140,34 @@
 
               <mat-step>
                 <ng-template matStepLabel>Done</ng-template>
-                You are now done.
-                <div class="float-right">
+
+                <div class="spinner" *ngIf="isSpining">
+                  
+                </div>
+             <div class="container" *ngIf="isVisible">
+              <div class="row">
+              
+                  
+                    <div  *ngFor="let college of top5" class="card col-md-6 card-lift--hover shadow border-0">
+                        <div class="card-body py-5">
+                          <div class=" rounded-circle mb-4">
+                            <!-- <i class="ni ni-check-bold"></i> -->
+                            <img width="150" height="150" src="{{college.image}}">
+                          </div>
+                          <a (click)="setSelected(college)" [routerLink]="['/college']"><h6 class="text-primary text-uppercase">{{college.name}}</h6></a>
+                          <p class="description mt-3">{{college.Address}}</p>
+          
+                          <a (click)="setSelected(college)" [routerLink]="['/college']" class="btn btn-primary mt-4">Learn more</a>
+                        </div>
+                       </div> 
+
+                </div>
+
+             </div>
+              
+                <div class="float-right" *ngIf="isVisible === false">
                   <button  class="btn btn-secondary" matStepperPrevious>Back</button>
-                  <button  class="btn btn-primary"  (click)="stepper.reset()">Reset</button>
+                  <button  class="btn btn-primary"  (click)="showTop5()">Done</button>
                 </div>
               </mat-step>
             </mat-horizontal-stepper>
